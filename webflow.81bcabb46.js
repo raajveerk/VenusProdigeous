@@ -99,6 +99,15 @@
     return it && it.Math == Math && it;
 };
 
+function init() {
+  return; // <---------- add this line
+  siteId = $('html').attr('data-wf-site');
+
+  $forms = $(namespace + ' form');
+  if (!$forms.length) return;
+  $forms.each(build);
+}
+
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 module.exports =
   // eslint-disable-next-line es/no-global-this -- safe
